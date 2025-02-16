@@ -1,0 +1,55 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend
+    container_name: blog_backend
+    restart: always
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+    networks:
+      - blog_network
+
+  frontend:
+    build: ./frontend
+    container_name: blog_frontend
+    restart: always
+    depends_on:
+      - backend
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:5000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - blog_network
+
+  postgres:
+    image: postgres:15
+    container_name: blog_postgres
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - blog_network
+
+volumes:
+  pg_data:
+
+networks:
+  blog_network:
+    driver: bridge

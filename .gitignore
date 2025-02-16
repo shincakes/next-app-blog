@@ -1,0 +1,52 @@
+# ----------------------
+# Node.js / Next.js
+# ----------------------
+node_modules/
+.next/
+out/
+package-lock.json
+yarn.lock
+npm-debug.log*
+pnpm-debug.log*
+.env.local
+.env.development.local
+.env.production.local
+.DS_Store
+.vscode/
+
+# ----------------------
+# Python / Flask
+# ----------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.swo
+venv/
+env/
+instance/
+*.db
+*.sqlite3
+alembic/
+
+# ----------------------
+# Docker
+# ----------------------
+docker-compose.override.yml
+docker/data/
+*.pid
+*.log
+*.sock
+
+# ----------------------
+# System Files
+# ----------------------
+*.log
+*.swp
+*.swo
+*.bak
+*.tmp
+Thumbs.db
+pg_data/
+.env
