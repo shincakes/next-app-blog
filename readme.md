@@ -22,8 +22,8 @@ Pre-requisites
 ### **1. Clone the Repository**
 Clone the repository to your local machine:
 ```bash
-git clone 
-cd <repository-name>
+git clone https://github.com/shincakes/next-app-blog.git
+cd next-app-blog
 ```
 
 ### **2. Give permission to the shell script**

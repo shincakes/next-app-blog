@@ -4,10 +4,6 @@
 
 echo "Setting up project..."
 
-# Step 1: Clone repository if not already cloned (uncomment if needed)
-# git clone https://your-repository-url.git
-# cd your-repository-directory
-
 # Step 2: Install backend dependencies
 echo "Installing backend dependencies..."
 cd backend
